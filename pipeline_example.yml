@@ -1,16 +1,16 @@
+# Thi is default 'before_script' for every job in pipeline
 default:
   before_script:
   - export BUILD_DATE=$(echo $CI_COMMIT_TIMESTAMP | grep -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}') # Date format YYYY-MM-DD
   - export VERSION_ID=$(echo $CI_COMMIT_REF_NAME)
-  - echo "Thi is default 'before_script' for ALL jobs"
-# This is variables for ALL j
+  - echo "This is default 'before_script' for ALL jobs"
+# This is variables for ALL jobs in pipeline
 variables:
   MONGO_IMAGE: "mongo:5"
   POSTGRES_IMAGE: "postgres:15"
   PULL_POLICY: if_not_present
   COMPOSE_VERSION: "3.4"
-# Формирование стейджей для генерируемого пайплайна
-# Матрица на пересечении mode*type
+# This is stages matrix. Cross of Modes and Types
 stages:
 - build-ha-thin
 - build-ha-full
