@@ -1,0 +1,30 @@
+{%- for mode in modes %}
+{%- for type in types %}
+{%- for product in products %}
+{%- for brand in products[product].brands %}
+{%- for bundle in products[product].bundles %}
+{{ product }}-{{ bundle }}-{{ brand }}-{{ mode }}-{{ type }}:
+  stage: build-{{ mode }}-{{ type }}
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: {{ brand }}
+    BUNDLE: {{ bundle }}
+    MODE: {{ mode }}
+    PRODUCT: {{ product }}
+    FRONT_TAG: {{ products[product].front_tag }}
+    TROUBLESHOOTING_ENABLE: "{{ products[product].troubleshooting }}"
+    TYPE: {{ type }}
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-{{ product}}-$VERSION_ID-$BUILD_DATE-{{ bundle }}-{{ brand }}-{{ mode }}-{{ type }}"
+  - scripts/build.sh
+  rules:
+{%- if mode in bundles[bundle].rules %}
+  - when: {{ bundles[bundle].rules[mode] }}{% else %}
+  - when: {{ bundles[bundle].rules[type] }}{%- endif %}
+{% endfor -%}
+{% endfor -%}
+{% endfor -%}
+{% endfor -%}
+{% endfor -%}

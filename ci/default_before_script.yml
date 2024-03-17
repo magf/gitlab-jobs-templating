@@ -1,0 +1,6 @@
+# Thi is default 'before_script' for every job in pipeline
+default:
+  before_script:
+  - export BUILD_DATE=$(echo $CI_COMMIT_TIMESTAMP | grep -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}') # Date format YYYY-MM-DD
+  - export VERSION_ID=$(echo $CI_COMMIT_REF_NAME)
+  - echo "This is default 'before_script' for ALL jobs"

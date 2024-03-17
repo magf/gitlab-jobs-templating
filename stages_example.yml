@@ -1,0 +1,7 @@
+# Формирование стейджей для генерируемого пайплайна
+# Матрица на пересечении mode*type
+stages:
+- build-ha-thin
+- build-ha-full
+- build-standalone-thin
+- build-standalone-full

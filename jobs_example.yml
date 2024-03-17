@@ -1,0 +1,532 @@
+
+product_one-basic-brand_one-ha-thin:
+  stage: build-ha-thin
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: brand_one
+    BUNDLE: basic
+    MODE: ha
+    PRODUCT: product_one
+    FRONT_TAG: 1.0-one
+    TROUBLESHOOTING_ENABLE: "false"
+    TYPE: thin
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-product_one-$VERSION_ID-$BUILD_DATE-basic-brand_one-ha-thin"
+  - scripts/build.sh
+  rules:
+  - when: manual
+
+product_one-pro-brand_one-ha-thin:
+  stage: build-ha-thin
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: brand_one
+    BUNDLE: pro
+    MODE: ha
+    PRODUCT: product_one
+    FRONT_TAG: 1.0-one
+    TROUBLESHOOTING_ENABLE: "false"
+    TYPE: thin
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-product_one-$VERSION_ID-$BUILD_DATE-pro-brand_one-ha-thin"
+  - scripts/build.sh
+  rules:
+  - when: manual
+
+product_one-ultimate-brand_one-ha-thin:
+  stage: build-ha-thin
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: brand_one
+    BUNDLE: ultimate
+    MODE: ha
+    PRODUCT: product_one
+    FRONT_TAG: 1.0-one
+    TROUBLESHOOTING_ENABLE: "false"
+    TYPE: thin
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-product_one-$VERSION_ID-$BUILD_DATE-ultimate-brand_one-ha-thin"
+  - scripts/build.sh
+  rules:
+  - when: on_success
+
+product_one-basic-brand_two-ha-thin:
+  stage: build-ha-thin
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: brand_two
+    BUNDLE: basic
+    MODE: ha
+    PRODUCT: product_one
+    FRONT_TAG: 1.0-one
+    TROUBLESHOOTING_ENABLE: "false"
+    TYPE: thin
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-product_one-$VERSION_ID-$BUILD_DATE-basic-brand_two-ha-thin"
+  - scripts/build.sh
+  rules:
+  - when: manual
+
+product_one-pro-brand_two-ha-thin:
+  stage: build-ha-thin
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: brand_two
+    BUNDLE: pro
+    MODE: ha
+    PRODUCT: product_one
+    FRONT_TAG: 1.0-one
+    TROUBLESHOOTING_ENABLE: "false"
+    TYPE: thin
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-product_one-$VERSION_ID-$BUILD_DATE-pro-brand_two-ha-thin"
+  - scripts/build.sh
+  rules:
+  - when: manual
+
+product_one-ultimate-brand_two-ha-thin:
+  stage: build-ha-thin
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: brand_two
+    BUNDLE: ultimate
+    MODE: ha
+    PRODUCT: product_one
+    FRONT_TAG: 1.0-one
+    TROUBLESHOOTING_ENABLE: "false"
+    TYPE: thin
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-product_one-$VERSION_ID-$BUILD_DATE-ultimate-brand_two-ha-thin"
+  - scripts/build.sh
+  rules:
+  - when: on_success
+
+product_two-ultimate-brand_one-ha-thin:
+  stage: build-ha-thin
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: brand_one
+    BUNDLE: ultimate
+    MODE: ha
+    PRODUCT: product_two
+    FRONT_TAG: 1.1-two
+    TROUBLESHOOTING_ENABLE: "true"
+    TYPE: thin
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-product_two-$VERSION_ID-$BUILD_DATE-ultimate-brand_one-ha-thin"
+  - scripts/build.sh
+  rules:
+  - when: on_success
+
+product_one-basic-brand_one-ha-full:
+  stage: build-ha-full
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: brand_one
+    BUNDLE: basic
+    MODE: ha
+    PRODUCT: product_one
+    FRONT_TAG: 1.0-one
+    TROUBLESHOOTING_ENABLE: "false"
+    TYPE: full
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-product_one-$VERSION_ID-$BUILD_DATE-basic-brand_one-ha-full"
+  - scripts/build.sh
+  rules:
+  - when: manual
+
+product_one-pro-brand_one-ha-full:
+  stage: build-ha-full
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: brand_one
+    BUNDLE: pro
+    MODE: ha
+    PRODUCT: product_one
+    FRONT_TAG: 1.0-one
+    TROUBLESHOOTING_ENABLE: "false"
+    TYPE: full
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-product_one-$VERSION_ID-$BUILD_DATE-pro-brand_one-ha-full"
+  - scripts/build.sh
+  rules:
+  - when: never
+
+product_one-ultimate-brand_one-ha-full:
+  stage: build-ha-full
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: brand_one
+    BUNDLE: ultimate
+    MODE: ha
+    PRODUCT: product_one
+    FRONT_TAG: 1.0-one
+    TROUBLESHOOTING_ENABLE: "false"
+    TYPE: full
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-product_one-$VERSION_ID-$BUILD_DATE-ultimate-brand_one-ha-full"
+  - scripts/build.sh
+  rules:
+  - when: on_success
+
+product_one-basic-brand_two-ha-full:
+  stage: build-ha-full
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: brand_two
+    BUNDLE: basic
+    MODE: ha
+    PRODUCT: product_one
+    FRONT_TAG: 1.0-one
+    TROUBLESHOOTING_ENABLE: "false"
+    TYPE: full
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-product_one-$VERSION_ID-$BUILD_DATE-basic-brand_two-ha-full"
+  - scripts/build.sh
+  rules:
+  - when: manual
+
+product_one-pro-brand_two-ha-full:
+  stage: build-ha-full
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: brand_two
+    BUNDLE: pro
+    MODE: ha
+    PRODUCT: product_one
+    FRONT_TAG: 1.0-one
+    TROUBLESHOOTING_ENABLE: "false"
+    TYPE: full
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-product_one-$VERSION_ID-$BUILD_DATE-pro-brand_two-ha-full"
+  - scripts/build.sh
+  rules:
+  - when: never
+
+product_one-ultimate-brand_two-ha-full:
+  stage: build-ha-full
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: brand_two
+    BUNDLE: ultimate
+    MODE: ha
+    PRODUCT: product_one
+    FRONT_TAG: 1.0-one
+    TROUBLESHOOTING_ENABLE: "false"
+    TYPE: full
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-product_one-$VERSION_ID-$BUILD_DATE-ultimate-brand_two-ha-full"
+  - scripts/build.sh
+  rules:
+  - when: on_success
+
+product_two-ultimate-brand_one-ha-full:
+  stage: build-ha-full
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: brand_one
+    BUNDLE: ultimate
+    MODE: ha
+    PRODUCT: product_two
+    FRONT_TAG: 1.1-two
+    TROUBLESHOOTING_ENABLE: "true"
+    TYPE: full
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-product_two-$VERSION_ID-$BUILD_DATE-ultimate-brand_one-ha-full"
+  - scripts/build.sh
+  rules:
+  - when: on_success
+
+product_one-basic-brand_one-standalone-thin:
+  stage: build-standalone-thin
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: brand_one
+    BUNDLE: basic
+    MODE: standalone
+    PRODUCT: product_one
+    FRONT_TAG: 1.0-one
+    TROUBLESHOOTING_ENABLE: "false"
+    TYPE: thin
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-product_one-$VERSION_ID-$BUILD_DATE-basic-brand_one-standalone-thin"
+  - scripts/build.sh
+  rules:
+  - when: manual
+
+product_one-pro-brand_one-standalone-thin:
+  stage: build-standalone-thin
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: brand_one
+    BUNDLE: pro
+    MODE: standalone
+    PRODUCT: product_one
+    FRONT_TAG: 1.0-one
+    TROUBLESHOOTING_ENABLE: "false"
+    TYPE: thin
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-product_one-$VERSION_ID-$BUILD_DATE-pro-brand_one-standalone-thin"
+  - scripts/build.sh
+  rules:
+  - when: manual
+
+product_one-ultimate-brand_one-standalone-thin:
+  stage: build-standalone-thin
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: brand_one
+    BUNDLE: ultimate
+    MODE: standalone
+    PRODUCT: product_one
+    FRONT_TAG: 1.0-one
+    TROUBLESHOOTING_ENABLE: "false"
+    TYPE: thin
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-product_one-$VERSION_ID-$BUILD_DATE-ultimate-brand_one-standalone-thin"
+  - scripts/build.sh
+  rules:
+  - when: on_success
+
+product_one-basic-brand_two-standalone-thin:
+  stage: build-standalone-thin
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: brand_two
+    BUNDLE: basic
+    MODE: standalone
+    PRODUCT: product_one
+    FRONT_TAG: 1.0-one
+    TROUBLESHOOTING_ENABLE: "false"
+    TYPE: thin
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-product_one-$VERSION_ID-$BUILD_DATE-basic-brand_two-standalone-thin"
+  - scripts/build.sh
+  rules:
+  - when: manual
+
+product_one-pro-brand_two-standalone-thin:
+  stage: build-standalone-thin
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: brand_two
+    BUNDLE: pro
+    MODE: standalone
+    PRODUCT: product_one
+    FRONT_TAG: 1.0-one
+    TROUBLESHOOTING_ENABLE: "false"
+    TYPE: thin
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-product_one-$VERSION_ID-$BUILD_DATE-pro-brand_two-standalone-thin"
+  - scripts/build.sh
+  rules:
+  - when: manual
+
+product_one-ultimate-brand_two-standalone-thin:
+  stage: build-standalone-thin
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: brand_two
+    BUNDLE: ultimate
+    MODE: standalone
+    PRODUCT: product_one
+    FRONT_TAG: 1.0-one
+    TROUBLESHOOTING_ENABLE: "false"
+    TYPE: thin
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-product_one-$VERSION_ID-$BUILD_DATE-ultimate-brand_two-standalone-thin"
+  - scripts/build.sh
+  rules:
+  - when: on_success
+
+product_two-ultimate-brand_one-standalone-thin:
+  stage: build-standalone-thin
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: brand_one
+    BUNDLE: ultimate
+    MODE: standalone
+    PRODUCT: product_two
+    FRONT_TAG: 1.1-two
+    TROUBLESHOOTING_ENABLE: "true"
+    TYPE: thin
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-product_two-$VERSION_ID-$BUILD_DATE-ultimate-brand_one-standalone-thin"
+  - scripts/build.sh
+  rules:
+  - when: on_success
+
+product_one-basic-brand_one-standalone-full:
+  stage: build-standalone-full
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: brand_one
+    BUNDLE: basic
+    MODE: standalone
+    PRODUCT: product_one
+    FRONT_TAG: 1.0-one
+    TROUBLESHOOTING_ENABLE: "false"
+    TYPE: full
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-product_one-$VERSION_ID-$BUILD_DATE-basic-brand_one-standalone-full"
+  - scripts/build.sh
+  rules:
+  - when: manual
+
+product_one-pro-brand_one-standalone-full:
+  stage: build-standalone-full
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: brand_one
+    BUNDLE: pro
+    MODE: standalone
+    PRODUCT: product_one
+    FRONT_TAG: 1.0-one
+    TROUBLESHOOTING_ENABLE: "false"
+    TYPE: full
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-product_one-$VERSION_ID-$BUILD_DATE-pro-brand_one-standalone-full"
+  - scripts/build.sh
+  rules:
+  - when: never
+
+product_one-ultimate-brand_one-standalone-full:
+  stage: build-standalone-full
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: brand_one
+    BUNDLE: ultimate
+    MODE: standalone
+    PRODUCT: product_one
+    FRONT_TAG: 1.0-one
+    TROUBLESHOOTING_ENABLE: "false"
+    TYPE: full
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-product_one-$VERSION_ID-$BUILD_DATE-ultimate-brand_one-standalone-full"
+  - scripts/build.sh
+  rules:
+  - when: manual
+
+product_one-basic-brand_two-standalone-full:
+  stage: build-standalone-full
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: brand_two
+    BUNDLE: basic
+    MODE: standalone
+    PRODUCT: product_one
+    FRONT_TAG: 1.0-one
+    TROUBLESHOOTING_ENABLE: "false"
+    TYPE: full
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-product_one-$VERSION_ID-$BUILD_DATE-basic-brand_two-standalone-full"
+  - scripts/build.sh
+  rules:
+  - when: manual
+
+product_one-pro-brand_two-standalone-full:
+  stage: build-standalone-full
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: brand_two
+    BUNDLE: pro
+    MODE: standalone
+    PRODUCT: product_one
+    FRONT_TAG: 1.0-one
+    TROUBLESHOOTING_ENABLE: "false"
+    TYPE: full
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-product_one-$VERSION_ID-$BUILD_DATE-pro-brand_two-standalone-full"
+  - scripts/build.sh
+  rules:
+  - when: never
+
+product_one-ultimate-brand_two-standalone-full:
+  stage: build-standalone-full
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: brand_two
+    BUNDLE: ultimate
+    MODE: standalone
+    PRODUCT: product_one
+    FRONT_TAG: 1.0-one
+    TROUBLESHOOTING_ENABLE: "false"
+    TYPE: full
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-product_one-$VERSION_ID-$BUILD_DATE-ultimate-brand_two-standalone-full"
+  - scripts/build.sh
+  rules:
+  - when: manual
+
+product_two-ultimate-brand_one-standalone-full:
+  stage: build-standalone-full
+  allow_failure: true
+  tags:
+  - host
+  variables:
+    BRAND: brand_one
+    BUNDLE: ultimate
+    MODE: standalone
+    PRODUCT: product_two
+    FRONT_TAG: 1.1-two
+    TROUBLESHOOTING_ENABLE: "true"
+    TYPE: full
+  script:
+  - export PACKAGE_NAME="MY_PRODUCT-product_two-$VERSION_ID-$BUILD_DATE-ultimate-brand_one-standalone-full"
+  - scripts/build.sh
+  rules:
+  - when: manual

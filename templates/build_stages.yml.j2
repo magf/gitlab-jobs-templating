@@ -1,0 +1,7 @@
+# This is stages matrix. Cross of Modes and Types
+stages:
+{%- for mode in modes %}
+{%- for type in types %}
+- build-{{ mode }}-{{ type }}
+{%- endfor %}
+{%- endfor %}

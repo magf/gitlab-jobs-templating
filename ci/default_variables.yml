@@ -1,0 +1,6 @@
+# This is variables for ALL jobs in pipeline
+variables:
+  MONGO_IMAGE: "mongo:5"
+  POSTGRES_IMAGE: "postgres:15"
+  PULL_POLICY: if_not_present
+  COMPOSE_VERSION: "3.4"

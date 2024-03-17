@@ -1,0 +1,79 @@
+# Пример файла спецификаций продукта для генерации матрицы джоб.
+# Для брендов есть режимы (modes). Это расширяет возможности генератора матриц сборки.
+# Таким образом для каждого продукта формируется матрица на пересечении brands*bundles,
+# где для каждой роли каждого бандла применяются режимы modes, если они описаны в самой роли.
+# Т.е. у нас получится количество матриц, умноженное на количество режимов.
+# Подробнее можно посмотреть в готовом сгенерированном файле пайплайнов - pipelines_example.yml
+
+# В данном случае будет сгенерировано 2 джоб, из них 4 не выполнятся никогда (не будут отображены),
+# 9 выполнятся автоматически и 15 будут ждать ручного выполнения.
+
+# Для правил
+modes: # Обладает приоритетом. Если присутствует в правилах, то types игнорируются
+- ha
+- standalone
+types: # Обрабатывается, если нет правил для modes. Нужно для переключения типов сборки
+- thin
+- full
+
+# Примеры:
+
+# Будет всегда nevr
+# rules:
+#   thin: on_success
+#   full: manual
+#   ha: never
+#   standalone: never
+
+# Будет nevr только для ha. Для остальных будет manual. Для входящих в остальные thin - on_succes
+# rules:
+#   thin: on_success
+#   full: manual
+#   ha: never
+
+products:
+  product_one:
+    front_tag: "1.0-one"
+    troubleshooting: "false"
+    brands:
+    - brand_one
+    - brand_two
+    bundles:
+    - basic
+    - pro
+    - ultimate
+  product_two:
+    front_tag: "1.1-two"
+    troubleshooting: "true"
+    brands:
+    - brand_one
+    bundles:
+    - ultimate
+
+bundles:
+  basic:
+    roles:
+    - common
+    - base
+    rules:
+      standalone: manual
+      thin: manual # будет проигнорировано
+      full: manual # будет проигнорировано
+  pro:
+    roles:
+    - common
+    - base
+    - pro
+    rules:
+      thin: manual
+      full: never
+  ultimate:
+    roles:
+    - common
+    - base
+    - pro
+    - ultimate
+    rules:
+      ha: on_success
+      thin: on_success  # будет проигнорировано
+      full: manual # будет проигнорировано
